@@ -1,4 +1,4 @@
-package comg.study.ssm;
+package com.study.ssm;
 
 /**
  * Hello world!

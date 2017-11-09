@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.dao.PersonDao">
+	<select id="getPersonById" resultType="com.study.bean.Person">
+		select id id,name name,pwd password,age age from person where id = #{id}
+	</select>
+
+	<select id="getAll" resultType="com.study.bean.Person">
+		select id id,name name,pwd password,age age from person
+	</select>
+</mapper>

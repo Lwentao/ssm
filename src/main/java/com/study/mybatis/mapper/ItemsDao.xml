@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.dao.ItemsDao">
+
+	<!-- public List<Items> getAllItems(); -->
+	<select id="getAllItems" resultType="com.study.bean.Items">
+		SELECT * FROM items
+	</select>
+	
+	<!-- public Items getItemsById(Integer id); -->
+	<select id="getItemsById" resultType="com.study.bean.Items">
+		SELECT * FROM items WHERE id=#{id}
+	</select>
+	
+	<!-- public boolean updateItems(Items item); -->
+	<update id="updateItems">
+		UPDATE items 
+		<set>
+		<if test="name != null and name.length() > 0">
+			`name` = #{name},
+		</if>
+		<if test="price != null">
+			price = #{price},
+		</if>
+		<if test="detail != null and detail.length() > 0">
+			detail = #{detail},
+		</if>
+		<if test="pic != null and pic.length() > 0">
+			pic = #{pic},
+		</if>
+		<if test="createtime != null">
+			createtime = #{createtime}
+		</if> 
+		</set>
+		WHERE id=#{id}
+	</update>
+</mapper>

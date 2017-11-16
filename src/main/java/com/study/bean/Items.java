@@ -64,4 +64,10 @@ public class Items {
 		this.createtime = createtime;
 	}
 
+	@Override
+	public String toString() {
+		return "Items [id=" + id + ", name=" + name + ", price=" + price + ", detail=" + detail + ", pic=" + pic
+				+ ", createtime=" + createtime + "]";
+	}
+
 }

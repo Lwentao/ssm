@@ -27,7 +27,7 @@ public class ItemsServiceImp implements ItemsService {
 
 	@Override
 	public boolean updateItems(Items items) {
-		return updateItems(items);
+		return itemsDao.updateItems(items);
 	}
 
 }
